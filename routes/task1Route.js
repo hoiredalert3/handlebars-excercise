@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   res.render("task1", { emotions, quotePath });
 });
 
-app.get("/task1.htm/:emotion", (req, res) => {
+router.get("/:emotion", (req, res) => {
   let emotion = req.params.emotion;
   let selectedEmotion = emotions.filter((item) => item.title == emotion);
   let quotePath = "/task1/default.jpg";
