@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const { emotions } = require("../data");
 
-app.get("/task1.htm", (req, res) => {
+router.get("/", (req, res) => {
   let quotePath = "task1/default.jpg";
   res.render("task1", { emotions, quotePath });
 });
 
-app.get("/task1.htm/:emotion", (req, res) => {
+router.get("/:emotion", (req, res) => {
   let emotion = req.params.emotion;
   let selectedEmotion = emotions.filter((item) => item.title == emotion);
   let quotePath = "/task1/default.jpg";

@@ -14,8 +14,6 @@ app.engine(
   })
 );
 
-app.use;
-
 app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
