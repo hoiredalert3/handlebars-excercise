@@ -7,6 +7,7 @@ const task1 = require("./routes/task1Route");
 const task2 = require("./routes/task2Route");
 const task3 = require("./routes/task3Route");
 const task4 = require("./routes/task4Route");
+const task4Details = require("./routes/task4DetailsRoute.js");
 
 app.use(express.static(__dirname + "/html"));
 app.engine(
@@ -28,5 +29,6 @@ app.use("/task1", task1);
 app.use("/task2", task2);
 app.use("/task3", task3);
 app.use("/task4", task4);
+app.use("/task4Details", task4Details);
 
 app.listen(port, () => console.log(`server is listening on port ${port}!`));
