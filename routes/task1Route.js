@@ -3,7 +3,7 @@ const router = express.Router();
 const { emotions } = require("../data");
 
 router.get("/", (req, res) => {
-  let quotePath = "task1/default.jpg";
+  let quotePath = "/task1/default.jpg";
   res.render("task1", { emotions, quotePath });
 });
 
