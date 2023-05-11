@@ -1,12 +1,27 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const expressHandlebars = require("express-handlebars");
 
+app.use(express.static(__dirname + "/html"));
 
+app.engine(
+  "hbs",
+  expressHandlebars.engine({
+    layoutsDir: __dirname + "/views/layouts",
+    defaultLayout: "layout",
+    extname: "hbs",
+  })
+);
+
+app.use;
+
+app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-  //   res.send("Hello World!");
-  res.sendFile(__dirname + "/html/index.htm");
+  res.render("index");
 });
+
+app.use("task1.htm", require("./routes/task1Route"));
 
 app.listen(port, () => console.log(`server is listening on port ${port}!`));
